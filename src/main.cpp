@@ -3,12 +3,12 @@
 #include <DallasTemperature.h>
 #include <WiFi.h>
 
-const char* ssid = "와이파이";
-const char* password = "비밀번호";
+const char* ssid = "";
+const char* password = "";
 
 #define DUST_VALUE_PIN 35
 #define DUST_LED_PIN 32
-#define ONE_WIRE_BUS 2
+#define ONE_WIRE_BUS 13
 
 const int relayPin = 33;
 int fanState = 0;
