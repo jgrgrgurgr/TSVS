@@ -3,10 +3,10 @@
 #include <DallasTemperature.h>
 #include <WiFi.h>
 
-const char* ssid = "U+Net9641";
-const char* password = "14317129M@";
+const char* ssid = "와이파이";
+const char* password = "비밀번호";
 
-#define DUST_VALUE_PIN 35  // 주석의 34번과 일치하는지 확인하세요
+#define DUST_VALUE_PIN 35
 #define DUST_LED_PIN 32
 #define ONE_WIRE_BUS 2
 
