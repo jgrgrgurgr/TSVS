@@ -22,7 +22,7 @@ void setup() {
   pinMode(relayPin, OUTPUT);
   digitalWrite(relayPin, LOW);
   pinMode(DUST_LED_PIN, OUTPUT);
-  digitalWrite(DUST_LED_PIN, HIGH); // LED 초기 상태 OFF (GP2Y10은 LOW일 때 켜짐)
+  digitalWrite(DUST_LED_PIN, HIGH);
   sensors.begin();
 
   Serial.println();
@@ -60,10 +60,10 @@ void loop() {
   // --- 3. 팬 제어 로직 (조건에 따라 수정 가능) ---
   if(dustValue >= 2000 && tempC >= 25){
     fanState = 0;
-    digitalWrite(relayPin, LOW); // 릴레이 OFF
+    digitalWrite(relayPin, LOW);
   } else {
     fanState = 1;
-    digitalWrite(relayPin, HIGH); // 릴레이 ON
+    digitalWrite(relayPin, HIGH);
   }
 
   // --- 4. 웹 서버 로직 (HTML 출력) ---
@@ -80,10 +80,9 @@ void loop() {
             client.println("HTTP/1.1 200 OK");
             client.println("Content-type:text/html; charset=UTF-8");
             client.println("Connection: close");
-            client.println("Refresh: 5"); // 5초마다 자동 새로고침
+            client.println("Refresh: 5");
             client.println();
             
-            // HTML 본문 시작
             client.println("<!DOCTYPE HTML><html><head>");
             client.println("<meta name='viewport' content='width=device-width, initial-scale=1'>");
             client.println("<style>body { font-family: sans-serif; text-align: center; }");
