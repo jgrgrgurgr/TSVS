@@ -122,8 +122,8 @@ void loop() {
     Serial.println("Client Disconnected.");
   }
   
-  // 시리얼 모니터 출력
+
   Serial.printf("Dust: %d | Temp: %.2f | Fan: %s\n", dustValue, tempC, fanState ? "OFF" : "ON");
   
-  delay(100); // 웹 서버 응답성을 위해 delay를 줄임
+  delay(100);
 }
